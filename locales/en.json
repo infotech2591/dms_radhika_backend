@@ -1,0 +1,18 @@
+{
+	"success": "success",
+	"messages": {
+		"mob_already_exist": "Mobile no already exist",
+		"data_fetched": "Data fetched successfully",
+		"data_updated": "Data updated successfully",
+		"data_deleted": "Data deleted successfully",
+		"register_success": "Data added successfully"
+	},
+	"response": {
+		"success": 200,
+		"created": 201,
+		"bad_request": 400,
+		"Unauthorized": 401
+	},
+	"\"Shop Address\" is required": "\"Shop Address\" is required",
+	"\"id\" is required": "\"id\" is required"
+}
