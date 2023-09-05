@@ -38,7 +38,11 @@ module.exports = (sequelize, DataTypes) => {
     address: DataTypes.TEXT,
     dealer_code: DataTypes.STRING,
     bill_attachment: DataTypes.STRING,
-    purchase_date: DataTypes.STRING
+    purchase_date: DataTypes.STRING,
+    motor: DataTypes.STRING,
+    motor_serial: DataTypes.STRING,
+    pump: DataTypes.STRING,
+    pump_serial: DataTypes.STRING,
     
   }, {
     sequelize,

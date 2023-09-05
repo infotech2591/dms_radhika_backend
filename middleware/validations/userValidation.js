@@ -3,7 +3,9 @@ const Joi = require('joi');
 userValidationSchema = {
 
     registerValidation:Joi.object({
+        id:Joi.number().optional(),
         email:Joi.string().email().trim().optional(),
+        dealer_code:Joi.string().trim().optional(),
         name:Joi.string().trim().required().label("Full name"),
         mob_no:Joi.string().trim().required().label("Mobile Number"),                                            
         address:Joi.string().trim().required().label("Address"),                                            

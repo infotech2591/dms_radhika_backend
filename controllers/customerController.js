@@ -64,4 +64,16 @@ exports.updateCustomer =  async(req,res,next)=>{
       }
 }
 
+exports.uploadBill =  async(req,res,next)=>{
+    try {
+      console.log(req.body);
+      let file = {bill_attachment:req.files[0].filename};
+      data = await customerCommon.updateCustomer(file, req.params.id);
+      res.status(response.success).send(sendResponse(true, messages.data_updated, data)); 
+      } catch (error) {
+        console.log(error);
+        res.status(response.bad_request).send(sendResponse(messages.went_wrong));
+      }
+}
+
   

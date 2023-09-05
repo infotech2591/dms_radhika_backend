@@ -8,22 +8,32 @@ const setLanguage = require("./middleware/setLocales");
 var indexRouter = require('./routes/index');
 var dealerRouter = require('./routes/dealer');
 var customerRouter = require('./routes/customer');
-
+var dealerStocksRouter = require('./routes/dealerStocks');
+var bodyParser = require('body-parser');
 var app = express();
+var cors = require('cors');
 
 // view engine setup
+app.use(express.static('./angular/dist/dms'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 dotenv.config();
 app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(setLanguage);
-app.use('/', indexRouter);
+app.use(cors({
+  origin: '*'
+}));
+app.use('/', express.static(path.join(__dirname, "dist")))
+// app.use('/', indexRouter);
 app.use("/dealer", dealerRouter);
 app.use("/customer", customerRouter);
+app.use("/dealerStocks", dealerStocksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -142,6 +142,7 @@ class Common{
                      { where: { id } }
                    )
                      .then(user => {
+                        console.log(user);
                         resolve(user)
                   })
             } catch (error) {

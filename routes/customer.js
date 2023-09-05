@@ -3,6 +3,7 @@ var router = express.Router();
 const validateRequest = require('../middleware/validations/dataValidator');
 const Validation = require('../middleware/validations/userValidation');
 let customerController = require("../controllers/customerController")
+const uploadFile = require('../middleware/upload_file');
 
 router.post("/register",
   customerController.registration
@@ -22,5 +23,9 @@ router.get("/getCustomer/:dealer_id",
 
 router.delete("/deleteCustomer/:id",
   customerController.deleteCustomer
+);
+
+router.post("/uploadBill/:id", uploadFile,
+  customerController.uploadBill
 );
 module.exports = router;

@@ -9,10 +9,10 @@ router.post("/register",
   dealerController.registration
 );
 
-router.put("/updateDealer",
-  validateRequest(Validation.updateValidation),
-  dealerController.updateDealer
-);
+// router.put("/updateDealer",
+//   validateRequest(Validation.updateValidation),
+//   dealerController.updateDealer
+// );
 
 router.get("/getAllDealers",
   dealerController.getAllDealers

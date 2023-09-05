@@ -5,6 +5,13 @@
     "database": "dms_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "password",
+    "database": "dms_test",
+    "host": "52.66.146.142",
+    "dialect": "mysql"
   }
   }
   
